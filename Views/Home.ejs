@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello from Home page</h1>
+    <% if (Posts.length>0){  %>
+       <% Posts.map((element)=>{  %>
+            <h1>Title : <%=element.title %></h1>
+            <p>Post : <%=element.body %></p>
+      <%  }) %>
+    <% } else { %>
+        <h1>No Posts to show</h1>
+    <% } %>
+</body>
+</html>
