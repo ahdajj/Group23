@@ -9,7 +9,12 @@ const PostSchema = new Schema({
     },
     body:{
         type:String
-    }
+    },
+    commentid:[{
+        type:mongoose.Types.ObjectId,
+        ref:'Comment'
+        }]
+
 },{timestamps:true})
 
 const Post = mongoose.model('Post' , PostSchema)

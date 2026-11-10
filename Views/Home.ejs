@@ -11,6 +11,19 @@
        <% Posts.map((element)=>{  %>
             <h1>Title : <%=element.title %></h1>
             <p>Post : <%=element.body %></p>
+            <form action="/delete/<%= element._id%>" , method="post">
+                <button>Delete</button>
+            </form>
+            <a href="/Edit/<%= element._id%>">Edit</a>
+            <!-- <a href="/delete/<%= element._id%>">delete</a> -->
+             <form method="post" action="/newcomment/<%= element._id%>">
+                <label>Write Your Comment</label>
+                <input type="text" name="commentBody">
+                <input type="submit"/>
+             </form>
+             <% element.commentid.map(comment=>{ %>
+                <h5><%=comment.commentBody%></h5>
+                <%})%>
       <%  }) %>
     <% } else { %>
         <h1>No Posts to show</h1>
